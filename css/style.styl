@@ -1,0 +1,2782 @@
+@import 'nh.css'
+@import 'prefix-free'
+@import 'popup'
+@import 'variables'
+div
+	// box-shadow 0 0 0 1px rgba(gray,.1)
+
+.header-left
+.header-right
+	// box-shadow 0 0 0 1px rgba(blue,.25)
+
+.bordered
+	// box-shadow r
+
+//********************* BEGIN INIT *********************
+body
+	color text-color
+	font-size 16px
+	line-height 22px
+	font-family fsr
+	//background transparent url(../img/12_col.blue.gif) center 0 repeat-y
+
+[v-cloak]
+	display none
+
+body.oh
+	overflow hidden
+
+#overlay
+	opacity 0
+	visibility hidden
+	// transition opacity .7s
+	background-color white
+	&.active
+		position fixed
+		top 0
+		bottom 0
+		left 0
+		right 0
+		visibility visible
+		z-index 3
+
+a
+	color text-color
+	text-decoration none
+	// transition color fast
+	&:hover
+		color green
+
+::selection
+	color white
+	background green
+
+::-moz-selection
+	color white
+	background green
+
+ul
+	margin 0
+	padding 0
+	list-style none
+	li
+		display inline-block
+
+h1
+	font-size 32px
+	font-family fsb
+	font-weight normal
+	line-height 50px
+	text-transform uppercase
+	letter-spacing 1.5px
+
+h2
+	font-size 32px
+	// font-family fsl
+	font-family fsr
+	text-transform uppercase
+	margin-top 60px
+	margin-bottom 30px
+	letter-spacing 2px
+
+.dotted
+	overflow hidden
+	h2
+		display inline-block
+		position relative
+		padding-left 10px
+		padding-right 10px
+		letter-spacing 2px
+		&:before
+		&:after
+			position absolute
+			top 8px
+			height 5px
+			width 1000px
+			content ''
+			display block
+			background transparent url(../img/ico.dot.png) 0 0 repeat-x
+		&:before
+			right 100%
+		&:after
+			left 100%
+
+.dots
+	height 100px
+	background transparent url(../img/ico.dot.png) 0 center repeat-x
+
+input
+textarea
+	outline none
+
+.menu__ul
+	i
+		opacity .3
+		display inline-block
+		background-color text-color
+
+// p
+// 	margin 0
+
+.text-center
+	text-align center
+
+.text-right
+	text-align right
+
+.centered
+	margin 0 auto
+
+.font-size-24
+	font-size 24px
+	line-height 42px
+
+.font-size-14
+	font-size 14px
+	line-height 22px
+
+// .uppercase
+// 	text-transform uppercase
+//********************* END INIT *********************
+
+
+//********************* BEGIN HEADER *********************
+// header
+	// position relative
+	//height 220px
+	//padding-top 20px
+	// box-shadow 0 0 0 1px blue inset
+
+.header
+	position relative
+	height 170px
+	padding-top 10px
+	font-size 12px
+
+.lng-search
+	height 40px
+	line-height 40px
+
+.lng
+	float left
+	span
+		opacity .3
+		padding-left 17px
+		padding-right 10px
+
+.search
+	margin-top -3px
+	position relative
+	margin-left 110px
+	border-radius 20px
+	width 40px
+	height 40px
+	cursor pointer
+	//box-shadow 0 0 0 1px rgba(black,.2)
+
+.search__icon
+	position absolute
+	top 8px
+	left 8px
+	//height 16px
+	height 20px
+	width 23px
+	background transparent url(../img/ico.search.png) 3px 2px no-repeat
+	transition transform fast slow*2, opacity fast slow*2
+
+.search:hover
+	.search__icon
+		transform rotate(110deg)
+		opacity 0
+		transition transform fast, opacity fast fast
+
+.search:hover .search__line
+// .search__line:hover
+	opacity 1
+	visibility visible
+	width 300px
+	left -12px
+	transition all slow fast
+
+.search__line
+	opacity 0
+	visibility hidden
+	position absolute
+	top 0
+	left 150px
+	height 40px
+	//width 300px
+	width 0
+	padding-right 110px
+	box-sizing border-box
+	//overflow hidden
+	background-color white
+	border-radius 20px
+	box-shadow 0 0 0 1px rgba(text-color,.5) inset
+	transition all slow slow
+
+.search__input
+	// box-shadow 0 0 0 1px orange
+	border none
+	margin-left 20px
+	vertical-align middle
+	box-sizing border-box
+	width 100%
+	color text-color
+	font-family fsm
+	font-size 16px
+	outline none
+
+.search__submit
+	position absolute
+	top 0
+	right 0
+	height 40px
+	width 80px
+	box-sizing border-box
+	border-radius 20px
+	color white
+	font-size 14px
+	// font-family fsl
+	font-family fsr
+	cursor pointer
+	background-color text-color
+	border none
+	&:hover
+		opacity .8
+
+.phones
+	padding-top 15px
+	p
+		// font-family fsl
+		font-family fsr
+		font-size 18px
+		margin .7em 0
+		//line-height 28px
+
+.logo
+	margin-top 50px
+	img
+		display block
+		margin 0 auto
+
+.top-links
+	margin-top 7px
+	li
+		//font-size 12px
+		// font-family fsl
+		font-family fsr
+	span
+		opacity .3
+		padding-left 13px
+		padding-right 15px
+
+
+.cart-area
+	margin-top 40px
+
+.cart
+	height 50px
+	width 60px
+	box-sizing border-box
+	padding-top 8px
+	padding-left 10px
+	float right
+	background transparent url(../img/cart.png) 0 0 no-repeat
+	color #B2AAA3
+	font-size 18px
+	text-align center
+	&:hover
+		color white
+		background transparent url(../img/cart.png) 0 -51px no-repeat
+
+nav
+	//box-shadow 0 0 0 1px orange inset
+	border-top 1px solid rgba(text-color,.2)
+	border-bottom 1px solid rgba(text-color,.2)
+	height 60px
+
+.menu
+	position relative
+	ul
+		position absolute
+		top 0
+		left 0
+		right 0
+		//box-shadow 0 0 0 1px coral
+		text-align justify
+		padding 0
+		// *
+		// 	box-shadow 0 0 0 2px rgba(lightblue,.1)
+		&:after
+			content ''
+			width 100%
+			height 0
+			line-height 0
+			font-size 0
+			visibility hidden
+			display inline-block
+		li
+			line-height 60px
+			// margin 0
+			// padding 0
+			font-size 18px
+			text-transform uppercase
+			letter-spacing 2.25px
+			display inline-block
+		i
+			height 5px
+			width 5px
+			border-radius 50%
+			line-height 60px
+		a:hover
+			//font-family fsm
+.menu__a
+	line-height 60px
+	display inline-block
+
+.menu__a--current
+	font-family fsb
+	cursor default
+	&:hover
+		color text-color
+//********************* END HEADER *********************
+
+
+
+//********************* BEGIN SLIDERS *********************
+.slider--top,
+.slider--customers,
+.slider--reviews
+	//box-shadow 0 0 25px 0 coral inset
+
+// D9D5D1
+.slider-product-wrapper
+	height 512px
+	width 376px
+	margin-bottom 30px
+
+.slider-product
+	position relative
+	z-index 5
+	width 376px
+	// margin 0 0 30px
+	// overflow hidden //!!!
+	&.position-fixed
+		&.no-thumbs
+			margin-top -282px
+		// overflow visible //!!!
+		// box-shadow 0 0 0 3px lightblue
+		position fixed
+		top 50%
+		left 50%
+		height 712px
+		width 564px
+		margin-top -356px
+		margin-left -282px
+		.slider-nav
+			width 384px // 376px + 4px + 4px = 384px
+			margin 0 auto
+		.hidden
+			display none
+		.slider-for
+			margin-bottom 12px
+			width 564px
+			border-radius 15px
+			// overflow hidden
+			box-shadow 0 0 0 1px rgba(text-color,.2), 0 10px 20px 0 rgba(black,.15)
+			.slide
+				// border-radius 15px
+				img
+					border-radius 15px
+					height 564px
+					width 564px
+			.slick-arrow
+				visibility visible
+				color transparent
+				overflow hidden
+				position absolute
+				top 50%
+				margin-top -28px
+				height 56px
+				width 30px
+				border none
+				z-index 2
+				opacity .7
+				box-shadow none
+				border-radius 0
+				&:hover
+					opacity 1
+				&:active
+					opacity .5
+			.slick-prev
+				left -70px
+				background transparent url(../img/product.prev.png) 0 0 no-repeat
+			.slick-next
+				right -70px
+				background transparent url(../img/product.next.png) 0 0 no-repeat
+	.slider-for
+		border-radius 10px
+		// overflow hidden
+		// box-shadow 0 0 0 1px rgba(text-color,.2), 0 10px 20px 0 rgba(black,.15)
+		box-shadow 0 0 0 1px rgba(text-color,.2)
+		// box-shadow 0 0 0 1px blue
+		// .slick-prev
+		// .slick-next
+		.slick-arrow
+			position absolute
+			height 25px
+			width 25px
+			border none
+			z-index 2
+			color transparent
+			overflow hidden
+			border-radius 50%
+			box-shadow 0 1px 2px 0 rgba(black,.2)
+			bottom -81px
+			opacity .7
+		.slick-prev
+			left -13px
+			background transparent url(../img/ico.prev.png) 0 0 no-repeat
+			background-size cover
+		.slick-next
+			right -13px
+			background transparent url(../img/ico.next.png) 0 0 no-repeat
+			background-size cover
+		.slick-arrow
+			&:hover
+				opacity 1
+			&:active
+				box-shadow none
+		.slide
+			cursor pointer
+			overflow hidden
+			// box-shadow none
+			// border-radius 10px
+			// box-shadow 0 0 0 1px rgba(text-color,.2)
+			img
+				border-radius 10px
+				height auto
+				width 100%
+	.slider-nav
+		// box-shadow 0 0 0 1px lightblue
+		// ДЛЯ ТЕНЮШЕК У АКТИВНЫХ БОКОВЫХ ЭЛЕМЕНТОВ
+		margin 0 -4px
+		.slick-arrow
+			position absolute
+			top 50%
+			visibility hidden
+			z-index -1
+		.slide
+			outline none
+			cursor pointer
+			padding 8px 4px
+			img
+				border-radius 5px
+				box-shadow 0 0 0 1px rgba(text-color,.2)
+				transition box-shadow .7s
+			&:focus
+				img
+					box-shadow 0 0 0 1px rgba(text-color,.2), 0 2px 6px 0 rgba(black,.15)
+		.slick-current
+			img
+				box-shadow 0 0 0 1px rgba(text-color,.2), 0 2px 6px 0 rgba(black,.15)
+
+.slider-wrapper
+	margin 0 -10px
+	width 980px //940px + 20px + 20px
+	overflow hidden
+	position relative
+	// margin-bottom 100px
+	&:before
+	&:after
+		position absolute
+		top 0
+		bottom 0
+		content ''
+		display block
+		width 25px
+		box-shadow 0 0 0 1px white inset
+		background-color bodybg
+		// background-color rgba(coral,.3)
+		z-index 1
+	&:before
+		left -5px
+	&:after
+		right -5px
+
+.slider
+	width 1280px //1280 - 940 = 320 / 2 = 160
+	margin 0 -150px //160 + 10
+	// box-shadow 0 0 0 1px red
+	.slick-arrow
+		color transparent
+		overflow hidden
+		position absolute
+		top 50%
+		margin-top -25px
+		height 50px
+		width 50px
+		border none
+		border-radius 25px
+		// box-shadow 0 0 0 2px white, 0 2px 4px 0 rgba(black,1)
+		box-shadow 0 2px 4px 0 rgba(black,.3)
+		z-index 2
+		opacity .7
+		&:hover
+			opacity 1
+		&:active
+			// box-shadow none
+			// box-shadow 0 0 0 2px white, 0 2px 2px 0 rgba(black,1)
+			box-shadow 0 2px 2px 0 rgba(black,.1)
+			//opacity 1
+	.slick-prev
+		left 154px
+		background transparent url(../img/ico.prev.png) 0 0 no-repeat
+	.slick-next
+		right 154px
+		background transparent url(../img/ico.next.png) 0 0 no-repeat
+	.slide
+		height 270px
+		width 296px
+		padding 2px 12px 12px
+		//box-shadow 0 0 0 1px blue
+		a
+			background-color #B0EDDF
+			display block
+			border-radius 5px
+			overflow hidden
+			position relative
+			z-index 1
+			box-shadow 0 0 0 1px rgba(text-color,.2)
+			transition box-shadow fast
+			outline none
+			img
+				transition transform fast
+			&:hover
+				// box-shadow 0 2px 4px 0 rgba(black,.3)
+				box-shadow 0 0 0 1px rgba(text-color,.2), 0 2px 6px 0 rgba(black,.3)
+				img
+					transform scale(1.03)
+					// transform scale(1.03) rotate(1deg)
+		// &:nth-child(odd)
+		// 	a:hover
+		// 		img
+		// 			transform scale(1.03) rotate(-1deg)
+
+//********************* END SLIDERS *********************
+
+
+//********************* BEGIN MAIN *********************
+.breadcrumbs
+	margin-top 30px
+	margin-bottom 20px
+	li
+		font-size 14px
+		padding-right 3px
+	.current
+		font-family fsm
+
+//******* BEGIN MAIN BANNER *******
+.main-banner
+	// box-shadow bl
+	height 510px
+	margin-bottom 70px
+	text-align center
+	background #B0EDDF url(../img/banner.png) center center no-repeat
+	background-size cover
+	&:before
+		height 100%
+		content ''
+		display inline-block
+		// box-shadow r
+		vertical-align middle
+
+.main-banner__title
+	display inline-block
+	margin 0
+	vertical-align middle
+	// box-shadow b
+	color white
+	font-family fsr
+	font-size 70px
+	text-align center
+	line-height 83px
+	text-shadow 0 8px 18px rgba(black,.5)
+
+.main-banner__selected
+	letter-spacing 5px
+	font-family fsm
+	text-transform uppercase
+
+.main-greeting
+	margin 0 auto 60px
+	text-align center
+	// font-family fsl
+	font-family fsr
+	font-size 24px
+	line-height 36px
+//******* END MAIN BANNER *******
+
+//******* BEGIN MAIN LINKS *******
+.main-links
+	overflow hidden
+	margin-bottom 15px
+
+.main-link
+	display block
+	position relative
+	background #B0EDDF
+	height 270px
+	border-radius 5px
+	overflow hidden
+	transition box-shadow fast
+	&:hover
+		box-shadow 0 2px 6px 0 rgba(black,.3)
+		.main-link__title
+			height 270px
+			transition height fast
+
+.main-link__title
+	position absolute
+	bottom 0
+	left 0
+	right 0
+	margin 0
+	height 80px
+	background-color rgba(text-color,.5)
+	color white
+	font-size 22px
+	letter-spacing 2px
+	text-align center
+	text-shadow 0 2px 4px rgba(black,.3)
+	text-transform uppercase
+	transition height slow*2
+	&:before
+		display inline-block
+		height 100%
+		content ''
+		vertical-align middle
+	
+//******* END MAIN LINKS *******
+
+//******* BEGIN BANNERS *******
+.banners
+	// box-shadow r
+.banner
+	display block
+	border-radius 5px
+	overflow hidden
+	transition box-shadow fast
+	&:hover
+		box-shadow 0 4px 12px 0 rgba(black,.3)
+	img
+		display block
+
+//******* END BANNERS *******
+
+//******* BEGIN BANNER BLOCK *******
+.banner-block
+	position relative
+	height 366px
+	//overflow hidden
+	margin-bottom 0px
+	//background transparent url(../img/banner.jpg) 0 0 no-repeat
+	&:after
+		content ''
+		display block
+		clear both
+
+.bb-left
+.bb-right
+	width 280px
+	height 306px
+	margin-top 24px
+	box-shadow 0 0 0 1px rgba(text-color,.2)
+	overflow hidden
+
+.bb-left
+	float left
+	margin-left 2px
+	border-radius 5px 0 0 5px
+
+.bb-right
+	float right
+	margin-right 2px
+	border-radius 0 5px 5px 0
+
+.bb-center
+	position absolute
+	top 7px
+	left 50%
+	margin-left -188px
+	height 340px
+	width 376px
+	overflow hidden
+	border-radius 5px
+	// box-shadow 0 0 0 1px rgba(text-color,.2), 0 2px 4px 0 rgba(black,.5), 0 1px 3px 0 rgba(black,.5)
+	box-shadow 0 0 0 1px rgba(text-color,.2), 0 6px 15px 0 rgba(black,.2)
+//******* END BANNER BLOCK *******
+
+
+
+//******* BEGIN CATALOG *******
+.catalog-page
+	h1
+		margin-bottom 7px
+	main
+		p
+			font-size 14px
+			line-height 24px
+			// opacity .5
+			margin 0 0 35px 0
+
+.catalog__item
+	border-radius 5px
+	overflow hidden
+	box-shadow 0 0 0 1px rgba(text-color,.2)
+	height 280px //280 - 216 = 64
+	transition box-shadow .3s
+	img
+		display block
+	&:hover
+		box-shadow 0 0 0 1px rgba(text-color,.2), 0 4px 12px 0 rgba(black,.13)
+		a
+			color text-color
+	.catalog__item__text
+		height 64px
+		letter-spacing -4px
+		padding 0 20px
+		&:before
+			content ''
+			display inline-block
+			vertical-align middle
+			height 100%
+			width 0
+			margin-left -1px
+		p
+			font-size 16px
+			line-height 22px
+			opacity 1
+			letter-spacing 0
+			display inline-block
+			vertical-align middle
+			margin 0
+//******* END CATALOG *******
+
+
+//******* BEGIN CONSTRUCTOR-BLOCK
+.constructor-block
+	position relative
+	height 600px
+	width 936px
+	margin-bottom 40px
+	border-radius 5px
+	box-shadow 0 0 0 1px rgba(text-color,.2)
+
+.constructor__price
+	color green
+	margin 10px 0 -25px
+	text-align center
+	// box-shadow 0 0 0 1px rgba(red,.3)
+	letter-spacing -1px
+
+.constructor__text
+	margin-bottom 40px
+
+.constructor__text--small
+	margin-top -15px
+
+.constructor__amount
+	position relative
+	font-size 60px
+	font-family fsb
+	line-height 90px
+	margin 0
+	display inline-block
+
+.constructor__currerncy
+	position absolute
+	top 47px
+	right -35px
+	display inline-block
+	font-size 18px
+	line-height 18px
+	font-family fsr
+	//padding-left 5px
+
+.cb-top-line
+	height 60px
+	line-hgith 60px
+	width 640px
+	overflow hidden
+	border-bottom 1px solid rgba(text-color,.2)
+	p
+		margin 0
+		line-height 60px
+
+.cb-step
+	color text-color-light
+	float left
+	width 160px
+	font-size 12px
+	cursor pointer
+	&:first-child
+		p:before
+			// display none
+			border-left none
+	p:before
+		content ''
+		display inline-block
+		// border-left 1px solid red
+		border-left 1px solid rgba(text-color,.2)
+		margin-right 20px
+		line-height 60px
+		height 24px
+		vertical-align middle
+	span
+		font-size 18px
+		margin-right 5px
+		font-family fsm
+
+.cb-step--current
+	color text-color
+	font-family fsb
+
+// .cb-steps
+// .cb-step
+// 	box-shadow 0 0 0 1px blue inset
+
+.cb-result
+	position absolute
+	top 0
+	right 0
+	bottom 0
+	width 296px
+	border-radius 0 5px 5px 0
+	background-color #E6E3E1
+	p
+		margin 0
+
+.cb-result__title
+	width 276px
+	border-bottom 1px solid rgba(text-color,.2)
+	// box-shadow 0 0 0 1px black
+	font-size 18px
+	font-family fsm
+	height 60px
+	line-height 60px
+	padding-left 20px
+	overflow hidden
+
+.cb-result__content
+	padding 25px 30px
+	height 400px
+
+.cb-result__data
+	height 30px
+	line-height 30px
+	font-size 16px
+	// font-family fsl
+	font-family fsr
+	// vertical-align middle
+	// box-shadow 0 0 0 1px black inset
+	span
+		vertical-align top
+	strong
+		display inline-block
+		font-weight normal
+		font-family fsm
+
+.cb-result__marks
+	display inline-block
+	width 145px //150px
+	// box-shadow 0 0 0 1px blue
+	span
+		vertical-align baseline
+
+.cb-result__object
+	position relative
+	height 300px
+	width 240px
+	margin-top 25px
+	box-shadow 0 2px 6px 0 rgba(black,.13)
+
+.cb-result__border
+.cb-result__img
+.cb-result__text
+	// box-shadow 0 0 0 1px orange inset
+	position absolute
+	img
+		height 300px
+		width 240px
+
+.cb-result__img
+	top 0
+	left 0
+	height 300px
+	width 240px
+	background-color rgba(white,1)
+	// background-color rgba(lightblue,.7)
+
+.cb-result__border
+	top 0
+	left 0
+	height 300px
+	width 240px
+
+.cb-result__text__title
+.cb-result__text__name
+.cb-result__text__date
+	position absolute
+	overflow hidden
+	left 35px
+	right 35px
+	text-align center
+	// box-shadow 0 0 0 1px rgba(blue,.1)
+	// font-family 'Nautilus Pompilius'
+	font-size 14px
+	line-height 1
+	&.davinci
+		font-size 16px
+
+.cb-result__text__title
+	top 40px
+
+.cb-result__text__name
+	bottom 50px
+	&.small
+		font-size 10px
+
+
+.cb-result__text__date
+	bottom 35px
+
+
+.cb-result__bottom
+	height 70px
+	padding-top 20px
+	// box-shadow 0 0 0 1px blue inset
+
+.cb-button
+	display block
+	margin 0 auto 20px
+	height 50px
+	width 250px
+	border-radius 20px
+	background-color green
+	border none
+	box-shadow none
+	color white
+	font-size 18px
+	line-height 55px
+	font-family fsm
+	text-transform uppercase
+	opacity .7
+	// background-color error-color
+	&.active
+		opacity 1
+		&:hover
+			background-color hovergreen
+			box-shadow 0 0 0 2px hovergreen
+		&:active
+			// background-color green
+			box-shadow none
+
+.cb-result__bottom
+	.cb-next
+		display block
+		margin 0 auto 20px
+		height 50px
+		width 250px
+		border-radius 20px
+		background-color green
+		color white
+		font-size 18px
+		line-height 55px
+		font-family fsm
+		text-align center
+		text-transform uppercase
+		// cursor pointer
+		opacity .7
+		&.active
+			cursor pointer
+			opacity 1
+			// box-shadow 0 0 0 3px white
+			&:hover
+				background-color hovergreen
+				box-shadow 0 0 0 2px hovergreen
+			&:active
+				// background-color green
+				box-shadow none
+
+.cb-wrapper
+	// box-shadow 0 0 0 10px rgba(red,.3) inset
+	position absolute
+	top 60px
+	left 0
+	height 450px
+	width 640px
+	overflow hidden
+
+#cb-items
+	width 2560px
+	position absolute
+	top 0
+	left 0
+	transition left .3s ease
+	&.cb-item1
+		left 0
+		transition left .3s ease
+	&.cb-item2
+		left -640px
+		transition left .3s ease
+	&.cb-item3
+		left -1280px
+		transition left .3s ease
+	&.cb-item4
+		left -1920px
+		transition left .3s ease
+	// &.cb-start
+	// 	background-color rgba(black,.1)
+
+.cb-item
+	box-sizing border-box
+	width 640px
+	// padding 15px 30px 0 30px
+	padding 29px 30px 0 30px
+	height 450px
+	float left
+
+.cb-item__title
+	font-size 24px
+	font-family fsm
+	line-height 42px
+	margin 0
+
+.cb-item__text
+	// box-shadow 0 0 0 1px red!important
+	font-size 14px
+	line-height 22px
+	margin-top 0
+
+.cb-item-pics
+.cb-item-borders
+.cb-item-marks
+	// box-shadow 0 0 0 1px red inset
+	height 320px
+	//height auto
+	overflow auto
+	margin-left -6px
+	margin-right -12px
+
+.cb-item-marks
+	height 298px
+	margin-right -20px
+
+.cb-item-pic
+	position relative
+	height 200px
+	width 180px
+	float left
+	margin 6px 6px
+	border-radius 5px
+	overflow hidden
+	box-shadow 0 0 0 1px rgba(text-color,.2)
+	background-color white
+	cursor pointer
+	transition box-shadow .2s
+	// overflow hidden
+	&.current
+		box-shadow none
+		// transition box-shadow .3s
+		&:after
+			position absolute
+			top 0
+			bottom 0
+			left 0
+			right 0
+			// border-radius 5px
+			// background-color rgba(text-color,.1)
+			content ''
+			display block
+			box-shadow 0 0 0 0, 0 0 0 5px rgba(green,.7) inset
+		&:hover
+			box-shadow 0 4px 12px 0 rgba(black,.13)
+	img
+		margin-top -10px
+		margin-left 2px
+		height 220px
+		width 176px
+		// display block
+	&:hover
+		box-shadow 0 0 0 1px rgba(text-color,.2), 0 4px 12px 0 rgba(black,.13)
+
+.cb-item-border
+	position relative
+	height 200px
+	width 180px
+	float left
+	margin 6px 6px
+	border-radius 5px
+	overflow hidden
+	box-shadow 0 0 0 1px rgba(text-color,.2) inset
+	background-color white
+	cursor pointer
+	transition box-shadow .3s
+	&.current
+		box-shadow 0 0 0 5px rgba(green,.7) inset
+		&:hover
+			box-shadow 0 0 0 5px rgba(green,.7) inset, 0 4px 12px 0 rgba(black,.13)
+		// &:after
+		// 	position absolute
+		// 	top 0
+		// 	bottom 0
+		// 	left 0
+		// 	right 0
+		// 	background-color rgba(text-color,.2)
+		// 	content ''
+		// 	display block
+	img
+		margin-top 25px
+		margin-left 30px
+		height 150px
+		width 120px
+		// display block
+	&:hover
+		box-shadow 0 0 0 1px rgba(text-color,.2) inset, 0 4px 12px 0 rgba(black,.13)
+
+.cb-item-border__prev
+	position absolute
+	top 50%
+	left 50%
+	margin-top -25px
+	margin-left -25px
+	// display block
+	display none
+	height 50px
+	width 50px
+	border-radius 25px
+	transform scale(.8)
+	opacity .15
+	transition transform .3s, opacity .3s
+	background transparent url(../img/ico.preview.png) 0 0 no-repeat
+	&:hover
+		transform scale(1)
+		opacity .3
+		box-shadow 0 4px 12px 0 rgba(black,.3)
+	&:first-of-type
+		display block
+
+.cb-item-mark
+	height 136px
+	width 136px
+	float left
+	margin 6px 5px
+	border-radius 5px
+	overflow hidden
+	box-shadow 0 0 0 1px rgba(text-color,.2)
+	background-color white
+	// cursor pointer
+	position relative
+	input
+		position absolute
+		top -20px
+		left -20px
+		& + label
+			box-shadow none
+			transition box-shadow .3s
+		&:checked + label
+			// transition box-shadow .3s
+			box-shadow 0 0 0 5px rgba(green,.7) inset
+			// &:hover
+			// 	box-shadow 0 0 0 5px rgba(green,.7) inset, 0 4px 12px 0 rgba(black,.13)
+	// &.current
+	// 	box-shadow 0 0 0 5px rgba(green,.7) inset
+	// 	&:hover
+	// 		box-shadow 0 0 0 5px rgba(green,.7) inset, 0 4px 12px 0 rgba(black,.13)
+	label
+		position absolute
+		top 0
+		bottom 0
+		left 0
+		right 0
+		z-index 3
+		cursor pointer
+		display block
+	img
+		margin-top 0px
+		margin-left 0px
+		height 136px
+		width 136px
+		// display block
+	// &.checked
+	// 	position relative
+	// 	&:after
+	// 		content ''
+	// 		position absolute
+	// 		top 0
+	// 		bottom 0
+	// 		left 0
+	// 		right 0
+	// 		background-color rgba(text-color,.2)
+	&:hover
+		box-shadow 0 0 0 1px rgba(text-color,.2), 0 4px 12px 0 rgba(black,.13)
+		// box-shadow 0 0 0 1px text-color, 0 4px 12px 0 rgba(black,.13)
+
+.mark-ico
+	display inline-block
+	line-height 30px
+	margin-right 4px
+	vertical-align middle
+	// box-shadow 0 0 0 1px black
+	span
+		display inline-block
+		height 14px
+		width 14px
+		border-radius 5px
+
+// .m-tangelo
+// 	background-color #F88642 //оранжевый
+// .m-bahamablue
+// 	background-color #6C8CE7 //синий
+// .m-pottersclay
+// 	background-color #DA8B45 //коричневый
+// .m-tart
+// 	background-color #D0CB41 //салатовый
+// .m-lilacposies
+// 	background-color #9A1039 //фиолетовый
+// .m-cottageivy
+// 	background-color #0A6027 //темнозеленый
+// .m-rhubarbstalk
+// 	background-color #A12A87 //рубиновый
+// .m-bambooleaves
+// 	background-color #8CA752 //зеленый
+
+.cb-item__line
+	margin-bottom 20px
+	input
+		height 40px
+		width 250px
+		margin-right 15px
+		padding-left 20px
+		padding-right 20px
+		box-sizing border-box
+		border-radius 16px
+		border none
+		box-shadow 0 0 0 1px rgba(text-color,.2) inset
+		&:focus
+			outline none
+			box-shadow 0 0 0 1px rgba(text-color,.7) inset
+			// box-shadow 0 0 0 1px rgba(text-color,.2) inset, 0 0 5px 0 rgba(text-color,.5)
+		&.not-valid
+			box-shadow 0 0 0 1px rgba(error-color,.8) inset
+	.error
+		color error-color
+		font-size 14px
+		// line-height 14px
+		display inline-block
+		vertical-align middle
+		height 40px
+		width 280px //315px - но из-за отступов между символами, на 5рх сокращаю
+		// box-shadow 0 0 0 1px rgba(red,.1)
+
+.cb-item__line--btns
+	//display inline-block
+	float left
+	height 40px
+	// width 330px
+	vertical-align middle
+	margin-right 15px
+	margin-top 10px
+
+.cb-item__line--result
+	//display inline-block
+	height 40px
+	margin-left 15px
+	//overflow hidden
+	margin-top 30px
+	font-size 24px
+	//vertical-align middle
+	.ariston
+		font-size 17px
+		// font-size 20px
+	.brody
+		font-size 20px
+
+.ariston
+	font-family 'Ariston'
+
+.davinci
+	font-family 'Davinci'
+
+.brody
+	font-family 'Brody'
+
+.btn-font
+	display inline-block
+	height 40px
+	width 100px
+	margin-right 10px
+	border-radius 16px
+	color green
+	font-size 16px
+	line-height 40px
+	text-align center
+	box-shadow 0 0 0 1px green inset
+	cursor pointer
+	&:last-child
+		margin-right 0
+
+.btn-font--active
+	color white
+	background-color green
+
+
+
+
+.cb-bottom-line
+	position absolute
+	bottom 0
+	left 0
+	width 640px
+	height 90px
+	text-align right
+	border-top 1px solid rgba(text-color,.2)
+
+.cb-total
+	height 90px
+	display inline-block
+	// box-shadow 0 0 0 1px red
+	padding 0
+	margin 0
+	margin-right 20px
+	line-height 90px
+
+.cb-total__text
+	font-size 16px
+
+.cb-total__amount
+	color green
+	font-size 60px
+	font-family fsb
+
+.cb-total__currency
+	color green
+	font-size 18px
+
+//******* END CONSTRUCTOR-BLOCK
+
+.do-you-want
+	font-size 16px
+	p
+		color text-color
+		line-height 1.5
+	a
+		margin-top 4px
+		margin-bottom 15px
+		display inline-block
+		height 70px
+		width 480px
+		//margin-bottom 35px
+		line-height 70px
+		border-radius 30px
+		color green
+		font-family fsm
+		background-color rgba(lightgreen,.3)
+		box-shadow 0 0 0 2px green inset
+		//opacity .3
+		&:hover
+			color white
+			background-color hovergreen
+			box-shadow 0 0 0 2px hovergreen
+		&:active
+			box-shadow none
+
+
+//******* BEGIN PRODUCTS *******
+.product-item
+	box-shadow 0 0 0 1px rgba(text-color,.2)
+	border-radius 5px
+	display block
+	height 350px
+	transition box-shadow .3s
+	margin 12px 0
+
+.product-item:hover
+	color text-color
+	box-shadow 0 0 0 1px rgba(text-color,.2), 0 4px 12px 0 rgba(black,.13)
+
+.product-item__img
+	display block
+	height 270px
+	width 296px
+
+.product-item__text
+	height 80px
+	//padding 0 20px 0 15px
+	// box-shadow 0 0 0 1px red inset
+	// display inline-block
+	// vertical-align middle
+
+.product-item__text__left
+	padding-left 20px
+	float left
+	height 80px
+	width 200px
+	overflow hidden
+	&:before
+		content ''
+		display inline-block
+		height 100%
+		vertical-align middle
+		margin-left -4px
+		margin-right -1px
+
+.product-item__text__right
+	height 80px
+	overflow hidden
+	padding-right 20px
+
+.product-item__text__title
+	margin 0
+	vertical-align middle
+	display inline-block
+
+.product-item__text__price
+	margin 20px 0 0 0
+	color green
+	font-size 12px
+	text-align right
+	overflow hidden
+	line-height 1
+	span
+		font-size 32px
+		font-family fsb
+
+.pagination
+	text-align center
+	&:hover
+		opacity .8
+
+.next-page
+.prev-page
+	color rgba(text-color,.5)
+	font-size 24px
+	// font-family fsl
+	font-family fsr
+	line-height 28px
+	display inline-block
+	text-align left
+	vertical-align middle
+
+.prev-page
+	text-align right
+
+.pagination
+	&:before
+		content ''
+		margin 0 -4px
+		display inline-block
+		height 100%
+		vertical-align middle
+
+.prev-arrow
+.next-arrow
+	display inline-block
+	vertical-align middle
+	height 56px
+	width 30px
+
+.prev-arrow
+		margin-right 10px
+		background transparent url(../img/arrow.prev.png) 0 0 no-repeat
+
+.next-arrow
+	margin-left 10px
+	background transparent url(../img/arrow.next.png) 0 0 no-repeat
+//******* END PRODUCTS *******
+
+//******* BEGIN PRODUCT PAGE *******
+.product
+	// box-shadow 0 0 0 1px orange
+	.dots
+		height 10px
+		background transparent url(../img/ico.dot.png) 0 center repeat-x
+		margin-bottom 35px
+	h2
+		margin-top 0
+		font-size 32px
+		font-family fsm
+		text-transform none
+		line-height 42px
+		margin-bottom 25px
+	.grid_7
+		height 504px
+		position relative
+	// div
+	// 	box-shadow 0 0 0 1px rgba(green,.2)
+
+.product__details
+	// box-shadow 0 0 0 1px blue
+
+.product__btn
+	margin 0
+	box-shadow 0 0 0 2px rgba(green,.3)
+	display block
+	float right
+	border-radius 30px
+	height 70px
+	width 215px
+	letter-spacing -4px
+	background-color rgba(lightgreen,.15)
+	&:hover
+		background-color green
+		box-shadow 0 0 0 0px green
+		// opacity .8
+		span
+			color white
+	&:before
+		content ''
+		vertical-align middle
+		display inline-block
+		margin-left -1px
+		height 100%
+		// box-shadow 0 0 0 1px blue
+	span
+		color green
+		font-size 14px
+		font-family fsm
+		line-height 18px
+		// box-shadow 0 0 0 1px red
+		text-align center
+		display inline-block
+		letter-spacing 0
+		line-height 1
+		vertical-align middle
+
+.product__price
+	// box-shadow g
+	// margin 20px 0 0 0
+	margin 0
+	margin-bottom 30px
+	color green
+	font-size 18px
+	// overflow hidden
+	line-height 1
+	span
+		font-size 60px
+		font-family fsb
+		// color green
+
+.product__params
+	// box-shadow 0 0 0 3px lightgreen
+	// font-family fsl
+	font-family fsr
+	line-height 30px
+	margin-bottom 30px
+	span
+		font-family fsm
+
+.product__select
+	position absolute
+	left 0
+	bottom 70px
+	// width 250px
+	// font-family fsl
+	font-family fsr
+	// margin-bottom 20px
+
+.product__to-cart
+	position absolute
+	left 0
+	bottom 0
+
+.product__qty
+	box-shadow 0 0 0 1px rgba(text-color,.2)
+	height 50px
+	width 110px
+	border-radius 20px
+	overflow hidden
+	display inline-block
+	vertical-align middle
+	margin-right 15px
+
+.product__qty__input
+	height 50px
+	width 60px
+	line-height 50px
+	text-align center
+	border none
+	border-right 1px solid rgba(text-color,.2)
+	float left
+	outline none
+	// background-color transparent
+
+.product__qty__btns
+	// background-color rgba(green,.1)
+	overflow hidden
+
+.product__qty-up
+.product__qty-down
+	display block
+	height 25px
+	line-height 25px
+	text-align center
+	cursor pointer
+	&:before
+		content ''
+		display inline-block
+		vertical-align middle
+		border-top 3px solid text-color
+		border-left 3px solid transparent
+		border-right 3px solid transparent
+		border-bottom none
+		opacity .5
+		line-height 25px
+	&:hover
+		background-color rgba(text-color,.03)
+		&:before
+			opacity 1
+		// display block
+		// text-align center
+		// vertical-align middle
+		// box-shadow 0 0 0 1px blue
+
+.product__qty-up
+	// background-color rgba(blue,.05)
+	border-bottom 1px solid rgba(text-color,.2)
+	&:before
+		border-top none
+		border-left 3px solid transparent
+		border-right 3px solid transparent
+		border-bottom 3px solid text-color
+		// border-top none
+
+.product__add
+	display inline-block
+	vertical-align middle
+	height 50px
+
+.product__add__btn
+	color white
+	font-size 18px
+	font-family fsm
+	text-transform uppercase
+	letter-spacing 1px
+	border none
+	height 50px
+	line-height 55px
+	width 250px
+	border-radius 20px
+	background-color green
+	box-shadow 0 0 0 2px transparent
+	outline none
+	&:hover
+		border none
+		background-color hovergreen
+		box-shadow 0 0 0 5px hovergreen inset, 0 0 0 2px hovergreen
+	&:focus
+	&:active
+		box-shadow none
+		opacity 1
+		outline none
+
+.product__text
+	h3
+		font-size 24px
+		font-weight normal
+		line-height 32px
+		margin 0
+	p
+		margin 0 0 10px 0
+		font-size 14px
+		line-height 24px
+		// font-family fsr
+
+//******* END PRODUCT PAGE *******
+
+
+
+
+//******* BEGIN CART PAGE *******
+.cart-page
+	// box-shadow 0 0 30px 3px green
+
+.cart__table
+	// width 100%
+	margin-top 5px
+	thead
+		th
+			// color red
+			// font-family fsl
+			font-family fsr
+			font-size 14px
+			font-weight normal
+			border-bottom 1px solid rgba(text-color,.3)
+			padding-bottom 10px
+	tbody
+		tr
+			position relative
+			// box-shadow 0 0 0 1px rgba(blue,.1) inset
+			// background-color rgba(green,.1)
+			border-bottom 1px dashed rgba(text-color,.1)
+			// &:after
+			// 	content ''
+			// 	display block
+			// 	position absolute
+			// 	bottom -1px
+			// 	left 0
+			// 	right 0
+			// 	height 2px
+			// 	background transparent url(../img/ico.dot.table.png) 0 center repeat-x
+			&:last-child
+				border-bottom 1px solid rgba(text-color,.3)
+				&:after
+					display none
+			// &:hover
+			// 	// background-color rgba(text-color,.02)
+			// 	img
+			// 		box-shadow 0 0 0 1px rgba(text-color,.2), 0 2px 4px 0 rgba(black,.15)
+	th
+		text-align left
+		&:last-child
+			padding-right 0
+			text-align right
+	td
+		padding 20px 20px 20px 0
+		// padding-right 20px
+		// box-shadow 0 0 0 1px rgba(coral,.1)
+		vertical-align middle
+		&:last-child
+			padding-right 0
+			text-align right
+	p
+		// background-color rgba(lightblue,.2)
+		margin 0
+	img
+		display block
+		border-radius 5px
+		box-shadow 0 0 0 1px rgba(text-color,.2)
+		margin 0
+		transition box-shadow .3s
+	.product__qty
+		margin-right 0
+
+.cart__price
+	// color text-color
+	// box-shadow g
+	// margin 20px 0 0 0
+	margin 0
+	margin-bottom 30px
+	// color green
+	font-size 16px
+	// overflow hidden
+	line-height 1
+	span
+		font-size 32px
+
+.cart__price--total
+	color green
+	margin 0
+	margin-bottom 30px
+	font-size 16px
+	line-height 1
+	span
+		font-size 32px
+		font-family fsm
+
+.cart__title
+	font-size 18px
+	line-height 24px
+	font-family fsm
+
+.cart__total
+	// box-shadow b
+	text-align right
+	// height 155px
+	padding 25px 0 20px
+	span
+		font-size 18px
+
+.cart__total__amount
+	display inline-block
+	color green
+	span
+		font-size 60px
+		font-family fsm
+		line-height 80px
+		padding-left 5px
+
+.cart__btns
+	// box-shadow 0 0 0 5px rgba(coral,.3)
+
+.cart__continue
+.cart__checkout
+	display block
+	margin 0
+	padding 0
+	font-size 18px
+	font-family fsm
+	text-transform uppercase
+	letter-spacing 1px
+	height 50px
+	line-height 54px
+	border-radius 20px
+
+.cart__continue
+	text-align center
+	width 320px
+	box-shadow 0 0 0 2px rgba(text-color,.3) inset
+	&:hover
+		color white
+		background-color rgba(text-color,.3)
+		box-shadow 0 0 0 2px rgba(text-color,.3)
+	&:active
+	&:focus
+		color white
+		background-color rgba(text-color,.5)
+		box-shadow none
+
+.cart__checkout
+	color white
+	float right
+	width 280px
+	border none
+	// box-shadow 0 0 0 2px green inset
+	background-color green
+	&:hover
+		color white
+		background-color hovergreen
+		box-shadow 0 0 0 5px hovergreen inset, 0 0 0 2px hovergreen
+	&:active
+		// background-color green
+		box-shadow none
+
+.cart__remove
+	position relative
+	left 20px
+	display inline-block
+	vertical-align middle
+	margin-left 0px
+	height 24px
+	width 24px
+	cursor pointer
+	background transparent url(../img/ico.remove.png) 0 0 no-repeat
+	opacity .2
+	transition opacity .3s
+	&:hover
+		opacity 1
+//******* END CART PAGE *******
+
+
+
+//******* BEGIN FAQ *******
+.faq
+	// box-shadow 0 0 0 1px purple
+	margin-top -15px
+
+.faq__line
+	position relative
+	border-bottom 1px solid rgba(text-color,.2)
+	&.active
+		.faq__icon
+			transform rotate(-180deg)
+	&:hover
+		.faq__icon
+			opacity .5
+
+
+.faq__title
+	cursor pointer
+	padding 23px 30px 24px 0
+	p
+		margin 0
+		font-size 24px
+		line-height 32px
+
+.faq__icon
+	position absolute
+	top 35px
+	right 10px
+	display block
+	height 10px
+	width 18px
+	opacity .2
+	background transparent url(../img/arrow.faq.png) 0 0 no-repeat
+	transition transform .3s
+
+.faq__content
+	display none
+	font-size 14px
+	line-height 24px
+	margin-bottom 20px
+	ul
+	ol
+		margin 0 0 10px 0
+		padding 0 0 0 20px
+		li
+			padding-left 5px
+	ul
+		list-style-image none
+		li
+			display list-item
+			position relative
+			&:before
+				position absolute
+				top 9px
+				left -13px
+				content ''
+				display inline-block
+				height 4px
+				width 4px
+				margin-right 10px
+				vertical-align middle
+				line-height 54px
+				border-radius 2px
+				background-color rgba(text-color,.5)
+	p
+		margin 0 0 10px 0
+	img
+		border-radius 5px
+		box-shadow 0 0 0 1px rgba(text-color,.2)
+//******* END FAQ *******
+
+
+//******* BEGIN BLOG *******
+.blog-page
+	h1
+		margin-bottom 0px
+.blog
+	// 
+
+.blog__line
+	// box-shadow 0 0 5px 0 lightcoral
+	position relative
+	padding 30px 0
+	overflow hidden
+	// border-bottom 1px solid rgba(text-color,.2)
+	&:after
+		position absolute
+		left 6px
+		right 0
+		bottom 0
+		content ''
+		display block
+		border-top 1px solid rgba(text-color,.2)
+		margin-left 5px
+	.grid_8
+		position relative
+		height 270px
+
+.blog__img
+	box-shadow 0 0 0 1px rgba(text-color,.2)
+	display block
+	// box-shadow 0 0 10px 0 black
+	border-radius 5px
+	overflow hidden
+	img
+		display block
+		height auto
+		width 100%
+
+.blog__title
+	font-size 24px
+	line-height 32px
+	font-family fsm
+	font-weight normal
+	margin 0 0 15px 0
+
+.blog__text
+	font-size 14px
+	line-height 24px
+	margin 0 0 15px 0
+
+.blog__more
+	position absolute
+	left 0
+	bottom 0
+	display inline-block
+	font-size 14px
+	line-height 32px
+	text-align center
+	height 30px
+	width 160px
+	border-radius 13px
+	box-shadow 0 0 0 1px rgba(text-color,.3) inset
+	&:hover
+		color white
+		background-color rgba(text-color,.3)
+		box-shadow 0 0 0 1px rgba(text-color,.3)
+	&:active
+	&:focus
+		color white
+		background-color rgba(text-color,.5)
+		box-shadow none
+
+.blog__pagination
+	margin-top 40px
+	text-align center
+
+.blog__prev
+.blog__next
+	opacity .5
+	margin 0 30px
+	&:hover
+		color text-color
+		opacity 1
+
+.blog__page-num
+	display inline-block
+	height 30px
+	width 30px
+	margin 0 3px
+	// box-shadow 0 0 0 1px black
+	text-align center
+	line-height 32px
+	border-radius 13px
+	&:hover
+		color white
+		border-radius 50%
+		background-color rgba(text-color-light,.5)
+	&.current
+		color white
+		cursor default
+		background-color rgba(text-color-light,.5)
+		// &:hover
+		// 	background-color text-color-light
+		
+//******* END BLOG *******
+
+
+//******* BEGIN ARTICLE *******
+.article-page
+	main
+		h1
+			font-size 24px
+			line-height 32px
+			font-family fsm
+			font-weight normal
+			letter-spacing 0
+			text-transform none
+		p
+			margin 0 0 15px 0
+			font-size 16px
+			line-height 28px
+		img
+			border-radius 5px
+			margin-bottom 15px
+
+.img__float--left
+	float left
+	margin-right 24px
+
+.img__float--right
+	float right
+	margin-left 24px
+//******* END ARTICLE *******
+
+
+//******* BEGIN DELIVERY *******
+.delivery
+	// box-shadow 0 0 10px 0 orange
+	p
+		margin 0 0 15px 0
+		// line-height 22px
+	a
+		color green
+
+.delivery__note
+	font-size 24px
+	line-height 32px
+
+.delivery__table
+	margin 30px 0
+	border-radius 30px
+	border 1px solid rgba(text-color,.2)
+	overflow hidden
+	// box-shadow 0 0 3px 3px coral
+	table
+		// border-collapse collapse
+	td
+	th
+		padding 15px 20px
+	td + td
+		border-left 1px solid rgba(text-color,.2)
+	tr + tr
+		border-top 1px solid rgba(text-color,.2)
+	th
+		font-family fsm
+		font-weight normal
+		border-bottom 1px solid rgba(text-color,.2)
+	th + th
+		border-left 1px solid rgba(text-color,.2)
+	p
+		margin 0
+		line-height 24px
+
+.price__table
+	th
+	td
+		text-align center
+	th:first-child
+	td:first-child
+		text-align left
+
+//******* END DELIVERY *******
+
+
+//******* BEGIN CONTACT *******
+.contact-page
+	// box-shadow 0 0 20px 0 lightblue
+
+.contact
+	margin-top -15px
+	a
+		color green
+
+.contact__note
+	font-size 24px
+	line-height 32px
+	// margin-bottom -12px
+
+.contact__form
+	width 456px
+	margin-bottom 50px
+	input
+		height 50px
+		width 100%
+		border-radius 20px
+		border none
+		box-shadow 0 0 0 1px rgba(text-color,.2) inset
+		padding 0 20px
+		box-sizing border-box
+		margin-bottom 20px
+		&:focus
+			box-shadow 0 0 0 1px rgba(text-color,.5) inset
+	.contact__half
+		display block
+		float left
+		width 216px
+		margin-left 24px
+		&.first-in-line
+			margin-left 0
+		// &:first-child
+		// 	margin-right 24px
+	textarea
+		padding 15px 20px
+		height 120px
+		width 100%
+		box-sizing border-box
+		border-radius 20px
+		border none
+		box-shadow 0 0 0 1px rgba(text-color,.2) inset
+		resize none
+		margin-bottom 20px
+		&:focus
+			box-shadow 0 0 0 1px rgba(text-color,.5) inset
+	button
+		color white
+		font-size 18px
+		font-family fsm
+		text-transform uppercase
+		height 50px
+		line-height 54px
+		width 100%
+		margin-top 10px
+		border-radius 20px
+		border none
+		background-color green
+		&:hover
+			background-color hovergreen
+			box-shadow 0 0 0 2px hovergreen
+		&:active
+			box-shadow none
+	.input__error
+		border 1px solid error-color
+
+
+.contact__soc
+	//
+
+.contact__soc--vk
+	height 71px
+	width 175px
+	padding-left 140px
+	display inline-block
+	vertical-align middle
+	background transparent url(../img/vk.png) 0 0 no-repeat
+	a
+		display block
+		color text-color
+		font-size 10px
+		line-height 1
+		margin-bottom 10px
+		&:hover
+			color green
+
+.contact__soc--fb-pin
+	vertical-align middle
+	display inline-block
+	a
+		display block
+		margin-top 5px
+		margin-bottom 5px
+		&:hover
+			opacity .7
+
+.contact__phones
+	padding-top 10px
+
+.contact__phones__col
+	width 49.5%
+	display inline-block
+	p
+		font-size 24px
+		line-height 32px
+		font-family fsm
+		margin 0
+
+.contact__schedule
+	box-shadow 0 0 0 10px rgba(text-color,.2) inset
+	padding 25px 30px
+	p
+		margin 0 0 7px 0
+		font-size 18px
+		line-height 24px
+		strong
+			font-size 24px
+			line-height 32px
+	.contact__time
+		color green
+		margin-top -7px
+		font-family fsb
+//******* END CONTACT *******
+
+
+//******* BEGIN CHECKOUT *******
+// .checkout
+// 	box-shadow 0 0 0 1px
+
+.checkout__form
+	// width 456px
+	margin-bottom 50px
+	// box-shadow 0 0 0 1px green
+	input
+		height 50px
+		width 100%
+		border-radius 20px
+		border none
+		// box-shadow 0 0 0 1px rgba(text-color,.2) inset
+		// box-shadow 0 0 0 1px rgba(blue,.5)
+		border 1px solid rgba(text-color,.2)
+		padding 0 20px
+		box-sizing border-box
+		margin-bottom 20px
+		outline none
+		&:focus
+			border 1px solid rgba(text-color,.5)
+	.checkout__1-3
+		margin-left 24px
+		display block
+		float left
+		width 216px
+		&.first-in-line
+			margin-left 0
+	.country__select
+		margin-left 24px
+		margin-bottom 20px
+	.delivery__select
+		float left
+		margin-left 24px
+		margin-bottom 20px
+	.checkout__2-3
+		display block
+		width 456px
+		float left
+		margin-right 24px
+	textarea
+		padding 15px 20px
+		height 120px
+		width 100%
+		box-sizing border-box
+		border-radius 20px
+		border none
+		box-shadow 0 0 0 1px rgba(text-color,.2) inset
+		resize none
+		margin-bottom 20px
+		&:focus
+			box-shadow 0 0 0 1px rgba(text-color,.5) inset
+	button
+		color white
+		font-size 18px
+		font-family fsm
+		text-transform uppercase
+		height 50px
+		line-height 54px
+		// width 456px
+		width 100%
+		margin-top 10px
+		border-radius 20px
+		border none
+		// float left
+		background-color green
+		&:hover
+			background-color hovergreen
+			box-shadow 0 0 0 2px hovergreen
+		&:active
+			box-shadow none
+	.input__error
+		border 1px solid error-color
+
+.checkout__error
+	// display inline-block
+	float right
+	// box-shadow b
+	width 216px
+	color error-color
+
+#storage
+	&[disabled]
+		opacity .5
+		background-color transparent
+
+//******* END CHECKOUT *******
+
+
+//******* BEGIN SELECT2 *******
+
+//******* BEGIN PRODUCT SELECT *******
+.select2-container
+	.select2-selection
+		height 50px
+		line-height 50px
+	.select2-selection--single
+		.select2-selection__rendered
+			color text-color
+			height 50px
+			line-height 50px
+			padding-left 20px
+			padding-right 50px
+
+.select2-container--default
+	.select2-results
+		.select2-results__options
+			max-height 400px
+	.select2-selection--single
+		// border 1px solid rgba(text-color,.2)
+		border 1px solid rgba(text-color,.3)
+		outline none
+		border-radius 20px
+		.select2-selection__arrow
+			height 50px
+			width 55px
+			border-left 1px solid rgba(text-color,.2)
+	.select2-results__option
+	.select2-results__option--highlighted
+		display block
+		line-height 50px
+		padding-left 20px
+	.select2-results__option--highlighted[aria-selected]
+		background-color green
+	.select2-results__option[aria-selected="true"]
+		color text-color
+		background-color transparent
+	.select2-results__option[aria-selected="true"]:hover
+		color white
+		background-color green
+	.select2-selection--single
+		.select2-selection__arrow
+			b
+				position absolute
+				top 50%
+				left 50%
+				margin-left -8px
+				margin-top -5px
+				height 10px
+				width 16px
+				border none
+				opacity .5
+				background transparent url(../img/arrow.select.png) 0 0 no-repeat
+				// transition transform .3s, opacity .3s
+				transition all .3s
+		&:hover
+			b
+				opacity 1
+
+.select2-dropdown
+	border-radius 20px
+	overflow hidden
+
+.select2-search
+	display none
+
+.select2-container--open
+	.select2-dropdown--below
+		// выпадающий снизу блок
+		// top-left top-right = 0
+		border 1px solid rgba(text-color,.3)
+		box-shadow 0 2px 4px 0 rgba(black,.15)
+	.select2-dropdown--above
+		// выпадающий сверху блок
+		// bottom-left bottom-right = 0
+		border 1px solid rgba(text-color,.3)
+		box-shadow 0 -2px 4px 0 rgba(black,.15)
+	.select2-selection--single
+		.select2-selection__arrow
+			b
+				transform rotate(-180deg)				
+
+// основной блок (выпадающий снизу)
+.select2-container--open.select2-container--below
+	box-shadow 0 2px 4px 0 rgba(black,.15)
+	border-radius 20px 20px 0 0
+	// border 10px dashed lightblue
+	.select2-selection--single
+		border-bottom none
+
+// основной блок (выпадающий сверху)
+.select2-container--open.select2-container--above
+	box-shadow 0 -2px 4px 0 rgba(black,.15)
+	border-radius 0 0 20px 20px
+	.select2-selection--single
+		border-top none
+
+
+
+//******* BEGIN PRODUCT SELECT *******
+
+
+
+//******* BEGIN CART SELECT *******
+.cart-page
+	.select2-container
+		color text-color
+		// font-size 16px
+		.select2-selection
+			height 30px
+			line-height 30px
+		.select2-selection--single
+			.select2-selection__rendered
+				color text-color
+				// box-shadow none
+				margin-top 5px
+				height 30px
+				line-height 30px
+				padding-left 0
+				padding-right 35px
+		.select2-selection__placeholder
+			// font-family fsl
+			color rgba(text-color,.5)
+	.select2-container--default
+		.select2-selection--single
+			border none
+			outline none
+			border-radius 0
+			.select2-selection__arrow
+				height 30px
+				width 35px
+				border-left none
+		.select2-results__option
+		.select2-results__option--highlighted
+			display block
+			line-height 30px
+			padding-left 10px
+
+		.select2-results__option--highlighted[aria-selected]
+			// background-color lightblue
+		.select2-selection--single
+			.select2-selection__arrow
+				b
+					position absolute
+					top 50%
+					left 50%
+					margin-left -5px
+					margin-top 0
+					height 6px
+					width 10px
+					border none
+					opacity 1
+					background transparent url(../img/arrow.select.small.png) 0 0 no-repeat
+					transition transform .3s, opacity .3s
+			&:hover
+				b
+					opacity .5
+
+
+.cart-page
+	.select2-dropdown
+		border-radius 12px
+		margin-left -10px
+		border none
+		box-shadow 0 0 4px 0 rgba(black,.15)
+		// overflow hidden
+
+.cart-page
+	.select2-container--open
+		.select2-dropdown--below
+			// выпадающий снизу блок
+			// top-left top-right = 0
+			border none
+			margin-top 10px
+		.select2-dropdown--above
+			// выпадающий сверху блок
+			// bottom-left bottom-right = 0
+			margin-top -10px
+		.select2-selection--single
+			.select2-selection__arrow
+				b
+					transform rotate(-180deg)
+
+.cart-page
+	// основной блок (выпадающий снизу)
+	.select2-container--open.select2-container--below
+		box-shadow none
+		// box-shadow 0 2px 4px 0 rgba(black,.15)
+		// border-radius 20px 20px 0 0
+		// border 10px dashed lightblue
+		.select2-selection--single
+			border-bottom none
+	// основной блок (выпадающий сверху)
+	.select2-container--open.select2-container--above
+		box-shadow none
+		// box-shadow 0 -2px 4px 0 rgba(black,.15)
+		// border-radius 0 0 20px 20px
+		.select2-selection--single
+			border-top none
+
+
+//******* END CART SELECT *******
+
+//******* END SELECT2 *******
+
+//********************* END MAIN *********************
+
+
+
+//********************* BEGIN FOOTER *********************
+footer
+	height 220px
+	margin-top 100px
+	padding-top 50px
+	background-color #574E46
+
+.search--footer
+	//height 40px
+	position relative
+	//margin-left 120px
+	border-radius 20px
+	width 40px
+	height 40px
+	line-height 40px
+	//vertical-align middle
+	//cursor pointer
+	//box-shadow 0 0 0 1px rgba(black,.2)
+
+.search--footer__icon
+	position absolute
+	top 10px
+	left 8px
+	//height 16px
+	height 20px
+	width 23px
+	background transparent url(../img/ico.search.png) 3px 2px no-repeat
+	// transition transform fast slow*2, opacity fast slow
+
+
+.search--footer__line
+	position relative
+	width 250px
+	height 40px
+	padding-left 20px
+	padding-right 110px
+	box-sizing border-box
+	background-color transparent
+	border-radius 20px
+	box-shadow 0 0 0 1px rgba(white,.1) inset
+	// &:hover
+	// &:active
+	// 	box-shadow 0 0 0 1px rgba(white,.3) inset
+	// border 2px solid red
+	// transition all slow slow
+
+.search--footer__input
+	// box-shadow 0 0 0 1px orange
+	border none
+	margin-left 20px
+	vertical-align middle
+	box-sizing border-box
+	width 100%
+	color rgba(white,.6)
+	background-color transparent
+	// font-family fsl
+	font-family fsr
+	font-size 14px
+	outline none
+
+.search--footer__submit
+	position absolute
+	top 0
+	right 0
+	height 40px
+	width 80px
+	box-sizing border-box
+	border-radius 20px
+	color rgba(white,.6)
+	font-size 14px
+	// font-family fsl
+	font-family fsr
+	cursor pointer
+	background-color #72675B
+	border none
+	&:hover
+		opacity .8
+
+.phones--footer
+	margin-top 5px
+	margin-bottom 18px
+	.phone
+		color white
+		opacity .6
+		margin 5px 0
+		// font-size 16px
+
+.footer-links
+	font-size 12px
+	// font-family fsl
+	font-family fsr
+	a
+		color rgba(white,.6)
+		&:hover
+			color green
+	span
+		color white
+		opacity .3
+		padding-left 15px
+		padding-right 15px
+
+.footer-email
+	overflow hidden
+	display block
+	margin-bottom 25px
+	// box-shadow 0 0 0 1px red
+	color rgba(white,.6)
+	font-size 14px
+	line-height 18px
+	// font-family fsl
+	font-family fsr
+	min-height 38px
+	background transparent url(../img/ico.envelope.png) 0 0 no-repeat
+	padding-left 66px
+	padding-top 2px
+	&:hover
+		background-position 0 -43px
+		// .footer-email__envelope
+		// 	opacity .75
+
+// .footer-email__envelope
+// 	display block
+// 	float left
+// 	margin-right 11px
+
+.footer-soc
+	display inline-block
+	// padding-right 20px
+	// box-shadow 0 0 0 1px rgba(green,.3)
+	text-align justify
+	line-height 0
+	&:after
+		content ''
+		display inline-block
+		width 100%
+
+.footer-vk
+	// display inline-block
+	height 47px
+	margin-bottom 25px
+	// width 120px
+	padding-left 100px
+	// box-shadow 0 0 0 1px rgba(red,.5)
+	background transparent url(../img/ico.vk.png) 0 0 no-repeat
+	a
+		display block
+		margin 0
+		color rgba(white,.6)
+		font-size 10px
+		line-height 16px
+		// line-height 14px
+		// box-shadow 0 0 0 1px blue
+		&:hover
+			// color rgba(green,.6)
+			color green
+
+.ico-soc
+	display inline-block
+	height 45px
+	opacity .6
+	// box-shadow b
+	&:hover
+		opacity 1
+
+.ico-fb
+	width 18px
+	background transparent url(../img/ico.fb.png) 0 top no-repeat
+	&:hover
+		background-position -20px top
+
+.ico-instagram
+	width 28px
+	background transparent url(../img/ico.instagram.png) 0 center no-repeat
+	&:hover
+		background-position -29px center
+
+.ico-pinterest
+	width 30px
+	background transparent url(../img/ico.pinterest.png) 0 bottom no-repeat
+	&:hover
+		background-position -31px bottom
+
+.footer-partners
+	li
+		// box-shadow 0 0 0 1px orange
+		margin-bottom 25px
+		// font-family fsl
+		font-family fsr
+	a
+		color rgba(white,.7)
+		&:hover
+			color green
+
+.footer-partner__img
+	float left
+
+.footer-partner__name
+	margin 5px 0 0 70px
+	// color rgba(white,.7)
+	font-size 18px
+
+.footer-partner__description
+	margin 0 0 0 70px
+	// color rgba(white,.7)
+	font-size 14px
+
+.footer-partners__title
+	margin 0 0 25px 0
+	color rgba(white,.6)
+	font-size 16px
+	text-transform uppercase
+	letter-spacing 1px
+
+
+
+// ********************* END FOOTER *********************
+
+//********************* BEGIN INNER PAGE *********************
+
+//********************* END INNER PAGE *********************
+
+
+
+
+
+

@@ -1,0 +1,382 @@
+<html class="" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Конструктор</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="js/vue.js"></script>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body class="constructor-page">
+<main>
+    <div class="container_12">
+        <div class="grid_12">
+            <div id="constructor" class="constructor-block">
+                <div class="cb-top-line">
+                    <div class="cb-step" v-bind:class = '{"cb-step--current": paintingShow}' data-step="cb-item1" id="cb-step1">
+                        <p>
+                            <span>1</span>
+                            Изображение
+                        </p>
+                    </div>
+                    <div class="cb-step" v-bind:class = '{"cb-step--current": frameShow}' data-step="cb-item2" id="cb-step2">
+                        <p>
+                            <span>2</span>
+                            Рама
+                        </p>
+                    </div>
+                    <div class="cb-step" v-bind:class = '{"cb-step--current": titleShow}' data-step="cb-item3" id="cb-step3">
+                        <p>
+                            <span>3</span>
+                            Заголовок
+                        </p>
+                    </div>
+                    <div class="cb-step" v-bind:class = '{"cb-step--current": colorShow}' data-step="cb-item4" id="cb-step4">
+                        <p>
+                            <span>4</span>
+                            Цвет отпечатков
+                        </p>
+                    </div>
+                </div>
+                <div class="cb-result">
+                    <div class="cb-result__title">
+                        <p>Ваша картина</p>
+                    </div>
+                    <div class="cb-result__content">
+                        <p class="cb-result__data">
+                            <span>Изображение:</span>
+                            <strong v-if='paintingElement.name'>{{paintingElement.name}}</strong>
+                            <strong v-else>Не выбрано</strong>
+                        </p>
+                        <p class="cb-result__data">
+                            <span>Рама:</span>
+                            <strong v-if='frameElement.name'>{{ frameElement.name }}</strong>
+                            <strong v-else>Не выбрано</strong>
+                        </p>
+                        <div class="cb-result__data">
+                            <span>Отпечатки:</span>
+                            <span v-if='colorElement.length > 0'><strong v-for='item in colorElement' class='color-item'
+                                v-bind:style="{'background-color': item}"></strong></span>
+                            <strong v-else>Не выбраны</strong>
+                        </div>
+                        <div class="cb-result__object">
+                            <div class="cb-result__img">
+                                <img v-if='paintingElement.src' :src="paintingElement.src">
+
+                            </div>
+                            <div class="cb-result__border">
+                                <img v-if='frameElement.src' :src="frameElement.src">
+                            </div>
+                            <p class="cb-result__text__title" v-bind:class='[titleElement.font]'>{{titleElement.title}}</p>
+                            <p class="cb-result__text__name" v-bind:class='[titleElement.font]'>{{titleElement.name}}</p>
+                            <p class="cb-result__text__date" v-bind:class='[titleElement.font]'>{{titleElement.date}}</p>
+                        </div>
+                    </div>
+                    <div class="cb-result__bottom">
+                        <form action="cart.html" method="POST">
+                            <p class="cb-next" v-on:click ='nextStep'>{{colorShow?'в корзину':'далле'}}</p>
+                            <input name="result" id="" type="text" hidden="">
+                        </form>
+                    </div>
+                </div>
+                <div class="cb-wrapper">
+                    <div id="cb-items" class="cb-item1">
+                    <transition name="animation" ></transition>
+
+                        <div class="cb-item" v-show='paintingShow'>
+                            <p class="cb-item__title">
+                                Выберите изображение
+                            </p>
+                            <p class="cb-item__text">
+                                для начала выберите основу, саму картину, на которую вы и гости вашего праздника будете
+                                наносить отпечатки пальцев с пожеланиями
+                            </p>
+                            <div class="cb-item-pics">
+                                <div class="cb-item-pic" v-on:click ='paintingClickElement'>
+                                    <img src="./img/pics/01.jpg" alt="Картинка №1" title="Картинка №1" width="176"
+                                         height="220" price = '11'>
+                                </div>
+                                <div class="cb-item-pic" v-on:click ='paintingClickElement'>
+                                    <img src="./img/pics/02.jpg" alt="Картинка №2" title="Картинка №2" width="176"
+                                         height="220" price = '12'>
+                                </div>
+                                <div class="cb-item-pic" v-on:click ='paintingClickElement'>
+                                    <img src="./img/pics/03.jpg" alt="Картинка №3" title="Картинка №3" width="176"
+                                         height="220" price = '13'>
+                                </div>
+                                <div class="cb-item-pic" v-on:click ='paintingClickElement'>
+                                    <img src="./img/pics/04.jpg" alt="Картинка №4" title="Картинка №4" width="176"
+                                         height="220" price = '14'>
+                                </div>
+                                <div class="cb-item-pic" v-on:click ='paintingClickElement'>
+                                    <img src="./img/pics/05.jpg" alt="Картинка №5" title="Картинка №5" width="176"
+                                         height="220" price = '15'>
+                                </div>
+                                <div class="cb-item-pic" v-on:click ='paintingClickElement'>
+                                    <img src="./img/pics/06.jpg" alt="Картинка №6" title="Картинка №6" width="176"
+                                         height="220" price = '16'>
+                                </div>
+                                <div class="cb-item-pic" v-on:click ='paintingClickElement'>
+                                    <img src="./img/pics/07.jpg" alt="Картинка №7" title="Картинка №7" width="176"
+                                         height="220" price = '17'>
+                                </div>
+                                <div class="cb-item-pic" v-on:click ='paintingClickElement'>
+                                    <img src="./img/pics/08.jpg" alt="Картинка №8" title="Картинка №8" width="176"
+                                         height="220" price = '18'>
+                                </div>
+                                <div class="cb-item-pic" v-on:click ='paintingClickElement'>
+                                    <img src="./img/pics/09.jpg" alt="Картинка №9" title="Картинка №9" width="176"
+                                         height="220" price = '19'>
+                                </div>
+                                <div class="cb-item-pic" v-on:click ='paintingClickElement'>
+                                    <img src="./img/pics/10.jpg" alt="Картинка №10" title="Картинка №10" width="176"
+                                         height="220" price = '20'>
+                                </div>
+                                <div class="cb-item-pic" v-on:click ='paintingClickElement'>
+                                    <img src="./img/pics/11.jpg" alt="Картинка №11" title="Картинка №11" width="176"
+                                         height="220" price = '21'>
+                                </div>
+                            </div>
+                        </div>
+                        </transition>
+                        <transition name="animation" >
+                        <div class="cb-item" v-show='frameShow'>
+                            <p class="cb-item__title">
+                                Рама
+                            </p>
+                            <p class="cb-item__text">
+                                подберите раму, которая подойдет случаю и впишется в интерьер, ведь вы же не просто
+                                оставляете "пальчики", а создаете предмет декора для дома и офиса:
+                            </p>
+                            <div class="cb-item-borders">
+
+                                <div class="cb-item-border" v-on:click ='frameClickElement'>
+                                    <img src="./img/borders/rama-01.png" alt="Багетная №1" title="Багетная №1"
+                                         width="120" height="150" price="100">
+
+                                </div>
+                                <div class="cb-item-border" v-on:click ='frameClickElement'>
+                                    <img src="./img/borders/rama-02.png" alt="Багетная №2" title="Багетная №2"
+                                         width="120" height="150" price="101">
+
+                                </div>
+                                <div class="cb-item-border" v-on:click ='frameClickElement'>
+                                    <img src="./img/borders/rama-03.png" alt="Багетная №3" title="Багетная №3"
+                                         width="120" height="150" price="102">
+                                    <a class="cb-item-border__prev fancybox gallery" target="_blank"
+                                                            href="./img/borders/prev.03.jpg" title="Багетная №3"
+                                                            rel="gal-2"></a>
+                                </div>
+                                <div class="cb-item-border" v-on:click ='frameClickElement'>
+                                    <img src="./img/borders/rama-04.png" alt="Багетная №4" title="Багетная №4"
+                                         width="120" height="150" price="103">
+                                    <a class="cb-item-border__prev fancybox gallery" target="_blank"
+                                                            href="./img/borders/prev.04.jpg" title="Багетная №4"
+                                                            rel="gal-3"></a>
+                                </div>
+                                <div class="cb-item-border" v-on:click ='frameClickElement'>
+                                    <img src="./img/borders/rama-05.png" alt="Багетная №5" title="Багетная №5"
+                                         width="120" height="150" price="104">
+                                    <a class="cb-item-border__prev fancybox gallery" target="_blank"
+                                                            href="./img/borders/prev.05.jpg" title="Багетная №5"
+                                                            rel="gal-4"></a>
+                                </div>
+                                <div class="cb-item-border" v-on:click ='frameClickElement'>
+                                    <img src="./img/borders/rama-06.png" alt="Багетная №6" title="Багетная №6"
+                                         width="120" height="150" price="105">
+                                    <a class="cb-item-border__prev fancybox gallery" target="_blank"
+                                                            href="./img/borders/prev.06.jpg" title="Багетная №6"
+                                                            rel="gal-5"></a>
+                                </div>
+                                <div class="cb-item-border" v-on:click ='frameClickElement'>
+                                    <img src="./img/borders/rama-07.png" alt="Багетная №7" title="Багетная №7"
+                                         width="120" height="150" price="106">
+                                    <a class="cb-item-border__prev fancybox gallery" target="_blank"
+                                                            href="./img/borders/prev.07.jpg" title="Багетная №7"
+                                                            rel="gal-6"></a>
+                                </div>
+                                <div class="cb-item-border" v-on:click ='frameClickElement'>
+                                    <img src="./img/borders/rama-08.png" alt="Багетная №8" title="Багетная №8"
+                                         width="120" height="150" price="107">
+                                    <a class="cb-item-border__prev fancybox gallery" target="_blank"
+                                                            href="./img/borders/prev.08.jpg" title="Багетная №8"
+                                                            rel="gal-7"></a>
+                                </div>
+                                <div class="cb-item-border" v-on:click ='frameClickElement'>
+                                    <img src="./img/borders/rama-09.png" alt="Багетная №9" title="Багетная №9"
+                                         width="120" height="150" price="108">
+                                    <a class="cb-item-border__prev fancybox gallery" target="_blank"
+                                                            href="./img/borders/prev.09.jpg" title="Багетная №9"
+                                                            rel="gal-8"></a>
+                                </div>
+                                <div class="cb-item-border" v-on:click ='frameClickElement'>
+                                    <img src="./img/borders/rama-10.png" alt="Багетная №10" title="Багетная №10"
+                                         width="120" height="150" price="109">
+                                    <a class="cb-item-border__prev fancybox gallery" target="_blank"
+                                                            href="./img/borders/prev.10.jpg" title="Багетная №10"
+                                                            rel="gal-9"></a>
+                                </div>
+                                <div class="cb-item-border" v-on:click ='frameClickElement'>
+                                    <img src="./img/borders/rama-11.png" alt="Багетная №11" title="Багетная №11"
+                                         width="120" height="150" price="110">
+                                    <a class="cb-item-border__prev fancybox gallery" target="_blank"
+                                                            href="./img/borders/prev.11.jpg" title="Багетная №11"
+                                                            rel="gal-10"></a>
+                                </div>
+                                <div class="cb-item-border" v-on:click ='frameClickElement'>
+                                    <img src="./img/borders/rama-12.png" alt="Багетная №12" title="Багетная №12"
+                                         width="120" height="150" price="111">
+                                    <a class="cb-item-border__prev fancybox gallery" target="_blank"
+                                                            href="./img/borders/prev.12.jpg" title="Багетная №12"
+                                                            rel="gal-11"></a>
+                                </div>
+                                <div class="cb-item-border" v-on:click ='frameClickElement'>
+                                    <img src="./img/borders/rama-13.png" alt="Багетная №13" title="Багетная №13"
+                                         width="120" height="150" price="112">
+                                    <a class="cb-item-border__prev fancybox gallery" target="_blank"
+                                                            href="./img/borders/prev.13.jpg" title="Багетная №13"
+                                                            rel="gal-12"></a>
+                                </div>
+                                <div class="cb-item-border" v-on:click ='frameClickElement'>
+                                    <img src="./img/borders/rama-14.png" alt="Багетная №14" title="Багетная №14"
+                                         width="120" height="150" price="113">
+                                    <a class="cb-item-border__prev fancybox gallery" target="_blank"
+                                                            href="./img/borders/prev.14.jpg" title="Багетная №14"
+                                                            rel="gal-13"></a>
+                                </div>
+                                <div class="cb-item-border" v-on:click ='frameClickElement'>
+                                    <img src="./img/borders/rama-15.png" alt="Багетная №15" title="Багетная №15"
+                                         width="120" height="150" price="114">
+                                    <a class="cb-item-border__prev fancybox gallery" target="_blank"
+                                                            href="./img/borders/prev.15.jpg" title="Багетная №15"
+                                                            rel="gal-14"></a>
+                                </div>
+                            </div>
+                        </div>
+                       </transition> 
+                       <transition name="animation" >
+                        <div class="cb-item" v-show='titleShow' >
+                            <p class="cb-item__title">
+                                Заголовок
+                            </p>
+                            <p class="cb-item__text">
+                                персонализируйте ваше "Дерево пожеланий"; вверху и внизу картины есть специальные поля,
+                                которые можно заполнить по вашему усмотрению: вписать имена виновников торжества, или
+                                особые пожелания, добавить дату, или логотип компании, если речь идет о корпоративном
+                                подарке.
+                            </p>
+                            <div class="cb-item__line">
+                                <input id="pic-title" placeholder="Наша Свадьба" maxlength="22" type="text" 
+                                    v-model="titleElement.title">
+                                <span>Заголовок картины</span>
+
+                            </div>
+                            <div class="cb-item__line">
+                                <input id="pic-name" placeholder="Анастасия и Константин" maxlength="36" type="text"
+                                    v-model="titleElement.name">
+                                <span>Подпись</span>
+                            </div>
+                            <div class="cb-item__line">
+                                <input id="pic-date" placeholder="29 июля 2015" maxlength="26" type="text"
+                                    v-model="titleElement.date">
+                                <span>Дата события</span>
+                            </div>
+                            <div class="cb-item__line--btns">
+									<span id="ariston" class="btn-font btn-font--active" v-on:click='fontClickElement'>
+										Ariston
+									</span>
+                                <span id="davinci" class="btn-font" v-on:click='fontClickElement'>
+										DaVinci
+									</span>
+                                <span id="brody" class="btn-font" v-on:click='fontClickElement'>
+										Brody
+									</span>
+                            </div>
+                        </div>
+
+                        </transition>
+                        <transition name="animation" >
+
+                        <div class="cb-item" v-show='colorShow' >
+                            <p class="cb-item__title">
+                                Цвет отпечатков
+                            </p>
+                            <p class="cb-item__text">
+                                наконец, подберите самые подходящие цвета красок, с помощью которых вы и оставите на
+                                картине свой след на память!<br>
+                                <strong>Обратите внимание: более 2-х цветов увеличат стоимость</strong>
+                            </p>
+
+                            <div class="cb-item-marks">
+                                <div class="cb-item-mark">
+                                    <input id="mark0" type="checkbox" name = "checked[]" value='#8ba4e9' v-model='colorElement' v-on:click='colorClickElement'>
+                                    <label for="mark0" title="BahamaBlue"></label>
+                                    <img src="./img/marks/BahamaBlue.jpg" alt="BahamaBlue" width="136" height="136">
+                                </div>
+                                <div class="cb-item-mark">
+                                    <input id="mark1" type="checkbox" name = "checked[]" value='#7a9240' v-model='colorElement' v-on:click='colorClickElement'>
+                                    <label for="mark1" title="BambooLeaves"></label>
+                                    <img src="./img/marks/BambooLeaves.jpg" alt="BambooLeaves" width="136" height="136">
+                                </div>
+                                <div class="cb-item-mark">
+                                    <input id="mark2" type="checkbox" name = "checked[]" value='#e1b4d9' v-model='colorElement' v-on:click='colorClickElement'>
+                                    <label for="mark2" title="LilacPosies"></label>
+                                    <img src="./img/marks/LilacPosies.jpg" alt="LilacPosies" width="136" height="136">
+                                </div>
+                                <div class="cb-item-mark">
+                                    <input id="mark3" type="checkbox" name = "checked[]" value='#ddda52' v-model='colorElement' v-on:click='colorClickElement'>
+                                    <label for="mark3" title="PearTart"></label>
+                                    <img src="./img/marks/PearTart.jpg" alt="PearTart" width="136" height="136">
+                                </div>
+                                <div class="cb-item-mark">
+                                    <input id="mark4" type="checkbox" name = "checked[]" value='#b23d64' v-model='colorElement' v-on:click='colorClickElement'>
+                                    <label for="mark4" title="RhubarbStalk"></label>
+                                    <img src="./img/marks/RhubarbStalk.jpg" alt="RhubarbStalk" width="136" height="136">
+                                </div>
+                                <div class="cb-item-mark">
+                                    <input id="mark5" type="checkbox" name = "checked[]" value='#f28f52' v-model='colorElement' v-on:click='colorClickElement'>
+                                    <label for="mark5" title="Tangelo"></label>
+                                    <img src="./img/marks/Tangelo.jpg" alt="Tangelo" width="136" height="136">
+                                </div>
+                                <div class="cb-item-mark">
+                                    <input id="mark6" type="checkbox" name = "checked[]" value='#31764a' v-model='colorElement' v-on:click='colorClickElement'>
+                                    <label for="mark6" title="CottageIvy"></label>
+                                    <img src="./img/marks/CottageIvy.jpg" alt="CottageIvy" width="136" height="136">
+                                </div>
+                                <div class="cb-item-mark">
+                                    <input id="mark7" type="checkbox" name = "checked[]" value='#d4d340' v-model='colorElement' v-on:click='colorClickElement'>
+                                    <label for="mark7" title="PearTart"></label>
+                                    <img src="./img/marks/PearTart.jpg" alt="PearTart" width="136" height="136">
+                                </div>
+                                <div class="cb-item-mark">
+                                    <input id="mark8" type="checkbox" name = "checked[]" value='#325dd7' v-model='colorElement' v-on:click='colorClickElement'>
+                                    <label for="mark8" title="BahamaBlue"></label>
+                                    <img src="./img/marks/BahamaBlue.jpg" alt="BahamaBlue" width="136" height="136">
+                                </div>
+                                <div class="cb-item-mark">
+                                    <input id="mark9" type="checkbox" name = "checked[]" value='#cf8b4c' v-model='colorElement' v-on:click='colorClickElement'>
+                                    <label for="mark9" title="PottersClay"></label>
+                                    <img src="./img/marks/PottersClay.jpg" alt="PottersClay" width="136" height="136">
+                                </div>
+                                
+                            </div>
+                        </transition>
+                        </div>
+                    </div>
+                </div>
+                <div class="cb-bottom-line">
+                    <div class="cb-total">
+                        <span class="cb-total__text">Стоимость:</span>
+                        <span class="cb-total__amount">{{ priceEnd }}</span>
+                        <span class="cb-total__currency"> грн</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+</body>
+
+</html>

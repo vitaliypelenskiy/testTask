@@ -1,0 +1,237 @@
+//BEGIN INIT
+@import 'variables'
+
+//END INIT
+
+.fancybox-title
+	display none
+
+.fancybox-close
+	// display none
+	top 25px
+	right 25px
+	height 23px
+	width 23px
+	background transparent url(../img/x.png) 0 0 no-repeat
+	opacity .7
+	&:hover
+		opacity 1
+
+.fancybox-wrap
+	// box-shadow 0 0 0 5px red inset
+	// &:before
+	// 	position absolute
+	// 	bottom -20px
+	// 	left 85px
+	// 	right 85px
+	// 	content ''
+	// 	display block
+	// 	height 160px
+	// 	border-radius 50%
+	// 	box-shadow 0 0 0 1px red inset
+	// 	background-color rgba(black,.2)
+	// 	z-index 8020
+
+.fancybox-opened
+	.fancybox-skin
+		background-color white
+		border-radius 15px
+		// box-shadow 0px 10px 25px rgba(0, 0, 0, 0.5), 0 0 0 5px rgba(text-color,.2) inset
+		box-shadow 0 0 0 1px rgba(text-color,.2),
+			0 10px 20px 0 rgba(black,.15)
+
+// 0 0 0 5px rgba(text-color,.2) inset
+
+.fancybox-outer
+	box-shadow none
+	// box-shadow 0 0 0 5px red
+
+.fancybox-inner
+	box-shadow none
+
+.fancybox-next
+	right -95px
+	span
+		background transparent url(../img/product.next.png) 0 0 no-repeat
+
+.fancybox-prev
+	left -95px
+	span
+		background transparent url(../img/product.prev.png) 0 0 no-repeat
+
+
+.fancybox-nav
+	width 0
+	span
+		visibility visible
+		// visibility hidden
+		position absolute
+		top 50%
+		width 30px
+		height 56px
+		margin-top -18px
+		cursor pointer
+		z-index 8040
+		opacity .7
+		&:hover
+			opacity 1
+		&:active
+			opacity .5
+
+.fancybox-overlay
+	background-image none
+	background-color rgba(white,.8)
+
+.popup
+	position relative
+	color text-color
+	// width 510px
+	padding 30px 45px 40px // 50px 65px -15px inner padding
+	box-shadow 0 0 0 5px rgba(text-color,.2)
+	border-radius 5px
+	a
+		color green
+		display inline-block
+		margin-bottom 10px
+	p
+		width 456px
+		font-size 18px
+		line-height 24px
+		text-align center
+		// box-shadow r
+	.popup__title
+		color green
+		font-family fsm
+		font-size 24px
+		line-height 36px
+		margin 10px auto
+	.popup__ok
+		color green
+		margin 30px auto 0
+		// border 2px solid rgba(text-color,.3)
+		border 2px solid rgba(green,.3)
+		border-radius 20px
+		height 50px
+		width 220px
+		cursor pointer
+		line-height 54px
+		text-align center
+		&:hover
+			color white
+			// border 2px solid text-color
+			// background-color text-color
+			border 2px solid green
+			background-color green
+		&:active
+			border 2px solid transparent
+	.popup__amount
+		font-family fsm
+		font-size 60px
+		line-height 1
+		margin 20px 0 0
+		span
+			display block
+			margin-top -10px
+			font-size 18px
+			line-height 18px
+			opacity .5
+
+.popup__submit
+	p
+		width 396px
+
+
+
+.popup__form
+	width 456px
+	// margin-bottom 50px
+	// box-shadow 0 0 0 1px green
+	input
+		height 50px
+		width 100%
+		border-radius 20px
+		border none
+		box-shadow 0 0 0 1px rgba(text-color,.2) inset
+		padding 0 20px
+		box-sizing border-box
+		margin-bottom 20px
+		&:focus
+			box-shadow 0 0 0 1px rgba(text-color,.5) inset
+	.popup__half
+		display block
+		float left
+		width 216px
+		margin-left 24px
+		&.first-in-line
+			margin-left 0
+		// &:first-child
+		// 	margin-right 24px
+	textarea
+		padding 15px 20px
+		height 120px
+		width 100%
+		box-sizing border-box
+		border-radius 20px
+		border none
+		box-shadow 0 0 0 1px rgba(text-color,.2) inset
+		resize none
+		margin-bottom 20px
+		&:focus
+			box-shadow 0 0 0 1px rgba(text-color,.5) inset
+	button
+		color white
+		font-size 18px
+		font-family fsm
+		text-transform uppercase
+		height 50px
+		line-height 54px
+		width 100%
+		margin-top 10px
+		border-radius 20px
+		border none
+		background-color green
+		&:hover
+			background-color hovergreen
+			box-shadow 0 0 0 2px hovergreen
+		&:active
+			box-shadow none
+	.input__error
+		border 1px solid error-color
+
+
+
+
+.popup__envelope
+	display block
+	height 41px
+	width 58px
+	margin-bottom 15px
+	background transparent url(../img/ico.envelope.green.png) 0 0 no-repeat
+
+.popup__girl
+	display block
+	height 50px
+	width 40px
+	margin-bottom 25px
+	&.girl1
+		background transparent url(../img/ico.girl.1.png) 0 0 no-repeat
+	&.girl2
+		background transparent url(../img/ico.girl.2.png) 0 0 no-repeat
+	&.girl3
+		background transparent url(../img/ico.girl.3.png) 0 0 no-repeat
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
